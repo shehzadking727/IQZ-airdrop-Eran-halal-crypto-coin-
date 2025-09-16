@@ -7,7 +7,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyB_PymE3aacSLID0EZduTVTwXfqiC9-lts",
   authDomain: "iqzad-tap-eran-halal-crypto.firebaseapp.com",
   projectId: "iqzad-tap-eran-halal-crypto",
-  storageBucket: "iqzad-tap-eran-halal-crypto.firebasestorage.app",
+  storageBucket:"iqzad-tap-eran-halal-crypto.appspot.com",
   messagingSenderId: "94523079394",
   appId: "1:94523079394:web:5db9e23146eed248297cbb",
   measurementId: "G-RT0Y3Z9Y24"
