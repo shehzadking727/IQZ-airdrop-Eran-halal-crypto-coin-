@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>IQZAD Tap & Earn (Demo)</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>IQZAD TAP & EARN</h1>
+    <div class="halal">✔ Halal & Ethical Token</div>
+  </header>
+
+  <div id="auth-area" class="muted small"></div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="val" id="points">0</div>
+      <div class="small">IQZ Tokens</div>
+    </div>
+    <div class="stat">
+      <div class="val" id="energy">2500</div>
+      <div class="small">Energy</div>
+    </div>
+    <div class="stat">
+      <div class="val" id="timeleft">59:58</div>
+      <div class="small">Time Left</div>
+    </div>
+  </div>
+
+  <div id="tap-screen" class="tap-area">
+    <div id="tapBtn" class="tap-btn">
+      <div>TAP TO EARN</div>
+      <div class="gain">+1 IQZ</div>
+    </div>
+    <div class="energy">
+      <div id="energyFill" class="energy-fill"></div>
+    </div>
+    <div class="small" style="margin-top:8px">Daily play time: <span id="daily">0:00</span> / 1:00:00</div>
+  </div>
+
+  <div id="withdraw-panel" class="panel">
+    <h3>💰 Withdraw</h3>
+    <p class="small">Minimum withdrawal: <strong>100 IQZ</strong></p>
+    <p class="small">Withdrawals available after 15 days. (To build trust)</p>
+    <button class="gold-btn" id="withdrawBtn">Withdraw — Open Form</button>
+    <div style="margin-top:8px" class="muted small">⚠️ All withdrawals will be processed only after 15 days to ensure system stability and prevent fraud. Please be patient, your funds are safe.</div>
+  </div>
+
+  <div id="invite-panel" class="panel">
+    <h3>👥 Invite Friends</h3>
+    <p class="small">Share your referral link. When a new user signs up via your link both get <strong>50 IQZ</strong>.</p>
+    <div class="invite-code" id="myRefCode">IQZAD2024</div>
+    <div style="margin-top:8px" class="small">Share this link:</div>
+    <input type="text" id="shareLink" readonly style="margin-top:6px" />
+    <div style="margin-top:8px" class="row">
+      <button class="gold-btn" id="copyBtn">Copy Link</button>
+      <button id="shareBtn">Share (native)</button>
+    </div>
+  </div>
+
+  <div id="social-panel" class="panel">
+    <h3>🌐 Follow & Earn</h3>
+    <div class="socials">
+      <a id="s_yt" href="#" target="_blank">YouTube</a>
+      <a id="s_x" href="#" target="_blank">X / Twitter</a>
+      <a id="s_ig" href="#" target="_blank">Instagram</a>
+      <a id="s_tt" href="#" target="_blank">TikTok</a>
+      <a id="s_fb" href="#" target="_blank">Facebook</a>
+    </div>
+    <p class="small" style="margin-top:8px">Click a social button, confirm that you followed, and get <strong>100 IQZ</strong>.</p>
+  </div>
+
+  <footer>
+    <nav>
+      <button id="navHome" class="active">🏠 Home</button>
+      <button id="navWithdraw">💰 Withdraw</button>
+      <button id="navInvite">👥 Invite</button>
+      <button id="navSocial">🌐 Social</button>
+    </nav>
+  </footer>
+</div>
+
+<!-- Firebase SDKs (v9 modular) -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.24.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.24.0/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc, updateDoc, serverTimestamp, runTransaction } from "https://www.gstatic.com/firebasejs/9.24.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB_PymE3aacSLID0EZduTVTwXfqiC9-lts",
+  authDomain: "iqzad-tap-eran-halal-crypto.firebaseapp.com",
+  projectId: "iqzad-tap-eran-halal-crypto",
+  storageBucket: "iqzad-tap-eran-halal-crypto.firebasestorage.app",
+  messagingSenderId: "94523079394",
+  appId: "1:94523079394:web:5db9e23146eed248297cbb",
+  measurementId: "G-RT0Y3Z9Y24"
+};
+
+// init firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const googleProvider = new GoogleAuthProvider();
+</script>
+
+<!-- app.js (game logic) -->
+<script type="module" src="app.js"></script>
+</body>
+  </html>
